@@ -29,7 +29,7 @@ def check_date():
     #print(tomorrow) 2024-04-25
     print("Iniciando envio de correos...")
 
-schedule.every().day.at("17:07", timezone("America/Monterrey")).do(check_date) #Realizar cada dia , para despues reutilizar esa fecha y traer los registros que corresponden a esa fecha
+schedule.every().day.at("17:51", timezone("America/Monterrey")).do(check_date) #Realizar cada dia , para despues reutilizar esa fecha y traer los registros que corresponden a esa fecha
 #TRAER TODOS LOS DATOS DE LA TABLA DE CITAS
 def get_citas():
         global tomorrow
@@ -87,7 +87,7 @@ def obtener_citas_y_enviar_correos():
         EnvioCorreos(email_cliente)
 
 # Programar la nueva función para que se ejecute a una hora específica
-schedule.every().day.at("17:08", timezone("America/Monterrey")).do(obtener_citas_y_enviar_correos)
+schedule.every().day.at("17:52", timezone("America/Monterrey")).do(obtener_citas_y_enviar_correos)
 
 def EnvioCorreos(email_cliente):
     destinatario = email_cliente
